@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faGithub } from '@fortawesome/free-brands-svg-icons'; //faLinkedin
 // import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { Input } from 'antd';
+import { Input, Icon } from 'antd';
 import logo from 'img/logo.png';
 class Home extends Component {
   render() {
@@ -43,6 +43,13 @@ class Home extends Component {
               </div>
               <div>&nbsp;</div>
             </div>
+          </div>
+          <div>
+            Made with <Icon style={{ color: 'red' }} type="heart" /> in Bengaluru.{' '}
+            <a href="/about" style={{ textDecoration: 'none', color: 'gray' }}>
+              A bit about us
+            </a>
+            .
           </div>
         </div>
       </div>
