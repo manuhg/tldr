@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from 'pages/Home';
 import About from 'pages/About';
+import Summarize from 'pages/Summarize';
 
 import 'css/loader.css';
 import 'css/App.css';
@@ -10,8 +11,9 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
+          <Route path="/summarize" exact component={Summarize} />
         </Switch>
       </Router>
     );
