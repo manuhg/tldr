@@ -7,13 +7,34 @@ import Summarize from 'pages/Summarize';
 import 'css/loader.css';
 import 'css/App.css';
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputText: '',
+    };
+
+    console.log(this);
+  }
+
+  updateText = text => {
+    this.setState({ inputText: text });
+  };
+
   render() {
     return (
       <Router>
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route
+            path="/"
+            exact
+            render={props => <Home updateText={this.updateText} inputText={this.state.inputText} />}
+          />
           <Route path="/about" exact component={About} />
-          <Route path="/summarize" exact component={Summarize} />
+          <Route
+            path="/summarize"
+            exact
+            render={props => <Summarize inputText={this.state.inputText} />}
+          />
         </Switch>
       </Router>
     );
