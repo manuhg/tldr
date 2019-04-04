@@ -3,8 +3,11 @@ import React, { Component } from 'react';
 // import { faGithub } from '@fortawesome/free-brands-svg-icons'; //faLinkedin
 // import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Input, Icon, message, Upload, Button } from 'antd';
+import { Link } from 'react-router-dom';
 import logo from 'img/logo.png';
+import Summarize from 'pages/Summarize.js';
 const { TextArea } = Input;
+
 // const Dragger = Upload.Dragger;
 
 // const props = {
@@ -39,17 +42,22 @@ class Home extends Component {
 
   onChangeInputText = e => {
     this.setState({ inputText: e.target.value });
+    sessionStorage.setItem('data', this.state.inputText);
   };
+
   render() {
     const Search = Input.Search;
     const { inputText } = this.state;
+    if (this.state.toDashboard === true) {
+      this.nextPath('/summarize');
+    }
     // const links = ['https://github.com/manuhg/tldr', faGithub];
     return (
       <div className="App container">
         <div className="row">
           <div className="col-12">
             <img style={{ borderRadius: '50%', width: '150px' }} src={logo} alt="tl;dr" />
-            <h2>Not all long things are nice</h2>
+            {/* <h2>Not all long things are nice</h2> */}
             {/* <div>
               {links.map((link, i) => (
                 <a
@@ -65,9 +73,10 @@ class Home extends Component {
               ))}
             </div> */}
           </div>
+          &nbsp;
           <div className="col-12">
             <div className="text-center">
-              <div style={{ fontSize: '1em', padding: '2px' }}>
+              <div style={{ fontSize: '1em', padding: '10px' }}>
                 <div>
                   {/* <Search
                     placeholder="input search text"
@@ -94,18 +103,23 @@ class Home extends Component {
                 <div>
                   <Button onClick={this.clearInput}>Clear</Button>
                   &nbsp;
-                  <Button type="primary">Summarize</Button>
+                  <Link
+                    to={{
+                      pathname: '/summarize',
+                    }}
+                  >
+                    <Button type="primary">Summarize</Button>
+                  </Link>
                 </div>
               </div>
               <div>&nbsp;</div>
             </div>
           </div>
-          <div>
+          <div style={{ padding: '10px' }}>
             Made with <Icon style={{ color: 'red' }} type="heart" /> in Bengaluru.{' '}
             <a href="/about" style={{ textDecoration: 'none', color: 'gray' }}>
               A bit about us
             </a>
-            .
           </div>
         </div>
       </div>
