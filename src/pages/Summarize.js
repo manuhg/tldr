@@ -14,7 +14,7 @@ class Summarize extends Component {
     const { inputText } = this.state.data;
     formData.append('document', inputText);
     console.log(inputText);
-    fetch('https://cloud.tldr.cool/summarize ', {
+    fetch('https://cloud.tldr.cool/', {
       method: 'POST',
       body: formData,
     }).then(function(response) {
