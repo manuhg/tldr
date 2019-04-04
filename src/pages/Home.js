@@ -42,7 +42,6 @@ class Home extends Component {
 
   onChangeInputText = e => {
     this.setState({ inputText: e.target.value });
-    sessionStorage.setItem('data', this.state.inputText);
   };
 
   render() {
@@ -108,7 +107,7 @@ class Home extends Component {
                       pathname: '/summarize',
                     }}
                   >
-                    <Button type="primary">Summarize</Button>
+                    <Button type="primary" onClick={sessionStorage.setItem('data', this.state.inputText)}>Summarize</Button>
                   </Link>
                 </div>
               </div>
