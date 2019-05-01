@@ -1,9 +1,11 @@
 @import '~antd/dist/antd.css';
+
 body {
-  font-family: 'Anonymous+Pro', monospace; /*'Overpass Mono'*/
+  font-family: 'Anonymous+Pro', monospace; /*'Overpass Mono'
+*/
   /* color: rgba(255,255,255,.75);
   background-color: rgb(25, 25, 25); */
-  display: flex;
+  /* display: flex; */
   align-items: center;
   align-content: center;
   justify-content: center;
