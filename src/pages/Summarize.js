@@ -79,7 +79,7 @@ class Summarize extends Component {
                   overflow: 'hidden',
                 }}
               >
-                <div>{text}</div>
+                <div>{this.state.response}</div>
               </Panel>
             </Collapse>
           </Content>
