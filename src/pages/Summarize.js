@@ -8,9 +8,7 @@ const { Header, Content, Footer } = Layout;
 const Panel = Collapse.Panel;
 const axios = require('axios');
 const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
+  The long time conspiracy of aliens creating untolerably long documents has been exposed! Hail the people below who have accepted the challenge to make the world a better place by inducing common knowlegde and general sense in form of a few sentences instead of long documents called the news paper articles.
 `;
 
 class Summarize extends Component {
@@ -42,7 +40,7 @@ class Summarize extends Component {
     this.sendData();
   }
   render() {
-    return this.state.response ? (
+    return (
       <div>
         <Layout>
           <Header>
@@ -79,19 +77,11 @@ class Summarize extends Component {
                   overflow: 'hidden',
                 }}
               >
-                <div>{this.state.response}</div>
+                <div>{text}</div>
               </Panel>
             </Collapse>
           </Content>
         </Layout>
-      </div>
-    ) : (
-      <div className="App container">
-        <div className="row">
-          <div className="col-md-8 col-offset-md-2">
-            <div className="text-center">WAITING</div>
-          </div>
-        </div>
       </div>
     );
     // return this.state.response ? (
