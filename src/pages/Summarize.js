@@ -40,7 +40,7 @@ class Summarize extends Component {
     this.sendData();
   }
   render() {
-    return (
+    return this.state.response ? (
       <div>
         <Layout>
           <Header>
@@ -77,11 +77,19 @@ class Summarize extends Component {
                   overflow: 'hidden',
                 }}
               >
-                <div>{text}</div>
+                <div>{this.state.response}</div>
               </Panel>
             </Collapse>
           </Content>
         </Layout>
+      </div>
+    ) : (
+      <div className="App container">
+        <div className="row">
+          <div className="col-md-8 col-offset-md-2">
+            <div className="text-center">WAITING</div>
+          </div>
+        </div>
       </div>
     );
     // return this.state.response ? (
