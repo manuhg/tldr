@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 import { Layout, Menu, Breadcrumb, Icon, Row, Col, Collapse } from 'antd';
 import 'css/Summarize.css';
 import logo from 'img/logo.png';
-import { jQuery, $ } from 'jquery';
 
 const { Header, Content, Footer } = Layout;
 const Panel = Collapse.Panel;
 const axios = require('axios');
-const text = `
-  The long time conspiracy of aliens creating untolerably long documents has been exposed! Hail the people below who have accepted the challenge to make the world a better place by inducing common knowlegde and general sense in form of a few sentences instead of long documents called the news paper articles.
-`;
 
 class Summarize extends Component {
   constructor(props) {
@@ -44,7 +40,9 @@ class Summarize extends Component {
       <div>
         <Layout>
           <Header>
-            <img style={{ bordeRadius: '50%', width: '50px' }} src={logo} alt="tl;dr" />
+            <a href="/">
+              <img style={{ bordeRadius: '50%', width: '50px' }} src={logo} alt="tl;dr" />
+            </a>
           </Header>
           <Content style={{ padding: '30px', background: '#fff' }}>
             <Collapse
