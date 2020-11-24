@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import { Card, Col, Row } from 'antd';
+import kalpitha from 'img/kalpitha.jpg';
+import mohan from 'img/mohan.jpeg';
+import harshal from 'img/harshal.jpeg';
+
+const { Meta } = Card;
+
 class About extends Component {
   render() {
     return (
@@ -15,6 +22,55 @@ class About extends Component {
               documents called the news paper articles. Wait till we roll out beta version before
               signing the next EULA!.
             </div>
+            &nbsp; &nbsp;
+            <div style={{ padding: '20px' }}>
+              <Row gutter={16}>
+                <Col span={6}>
+                  <div style={{ paddingLeft: '60px' }}>
+                    <Card
+                      hoverable
+                      style={{ width: 240 }}
+                      cover={<img alt="example" src={kalpitha} />}
+                    >
+                      <Meta title="Kalpitha V Bekal" description="" />
+                    </Card>
+                  </div>
+                </Col>
+                <Col span={6}>
+                  <div style={{ paddingLeft: '40px' }}>
+                    <Card
+                      hoverable
+                      style={{ width: 240 }}
+                      cover={
+                        <img
+                          alt="example"
+                          src="https://manuhegde.in/static/media/2dp.a9371b0f.jpg"
+                        />
+                      }
+                    >
+                      <Meta title="Manu Hegde" description="" />
+                    </Card>
+                  </div>
+                </Col>
+                <Col span={6}>
+                  <div style={{ paddingLeft: '20px' }}>
+                    <Card
+                      hoverable
+                      style={{ width: 240 }}
+                      cover={<img alt="example" src={harshal} />}
+                    >
+                      <Meta title="Harshal Bhatia" description="" />
+                    </Card>
+                  </div>
+                </Col>
+                <Col span={6}>
+                  <Card hoverable style={{ width: 228 }} cover={<img alt="example" src={mohan} />}>
+                    <Meta title="Mohan Krishna S" description="" />
+                  </Card>
+                </Col>
+              </Row>
+            </div>
+            <div />
           </div>
         </div>
       </div>
