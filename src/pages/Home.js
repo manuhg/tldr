@@ -110,7 +110,9 @@ class Home extends Component {
       <div className="App container">
         <div className="row">
           <div className="col-12">
-            <img style={{ bordeRadius: '50%', width: '150px' }} src={logo} alt="tl;dr" />
+            <a href="/">
+              <img style={{ bordeRadius: '50%', width: '150px' }} src={logo} alt="tl;dr" />
+            </a>
             {/* <h2>Not all long things are nice</h2> */}
             {/* <div>
               {links.map((link, i) => (
@@ -158,7 +160,7 @@ class Home extends Component {
                         </Link>
                       </div>
                     </TabPane>
-                    {/* <TabPane tab="Paste URL" key="2" disabled>
+                    <TabPane tab="Paste URL" key="2" disabled>
                       <Row>
                         <Col span={16}>
                           <Input placeholder="Paste URL" />
@@ -176,7 +178,7 @@ class Home extends Component {
                           </Link>
                         </Col>
                       </Row>
-                    </TabPane> */}
+                    </TabPane>
                     <TabPane tab="Upload File" key="3">
                       <div className="text-center mt-5">
                         <Dragger {...props}>
